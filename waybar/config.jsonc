@@ -1,0 +1,144 @@
+{
+  "clock": {
+    "calendar": {
+      "format": {
+        "days": "<span color='#bdae93'><b>{}</b></span>",
+        "today": "<span color='#fe8019'><b>{}</b></span>",
+        "weekdays": "<span color='#8ec07c'><b>{}</b></span>"
+      },
+      "mode": "month"
+    },
+    "format": "<span color='#ffffff'> </span> {:%H:%M}",
+    "format-alt": "<span color='#ffffff'> </span> {:%d %m %Y}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+  "cpu": {
+    "format": "<span color='#ffffff'>  </span> {usage}%",
+    "format-alt": "<span color='#ffffff'>  </span> {avg_frequency}GHz",
+    "interval": 5
+  },
+  "custom/notification": {
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "return-type": "json",
+    "escape": true,
+    "format": "<big>{icon}</big>",
+    "format-icons": {
+      "none": "",
+      "notification": "",
+      "dnd-none": "",
+      "dnd-notification": ""
+    },
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw"
+  },
+  "custom/power": {
+    "format": "<big></big>",
+    "on-click": "~/.config/hypr/scripts/shutdown.sh",
+    "tooltip-format": "Shutdown"
+  },
+  "custom/lock": {
+    "format": "<big>\uf023</big>",
+    "on-click": "~/.config/hypr/scripts/lock.sh",
+    "tooltip-format": "Lock"
+  },
+  "custom/reboot": {
+    "format": "<big></big>",
+    "on-click": "~/.config/hypr/scripts/reboot.sh",
+    "tooltip-format": "Reboot"
+  },
+  "custom/user-menu": {
+    "format": "<big></big>",
+    "on-click": "",
+    "tooltip": false
+  },
+"battery": {
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "  {capacity}%",  // Şarj olurken gösterilecek ikon
+    "format-plugged": "  {capacity}%",    // Prizdeyken gösterilecek ikon
+    "format-alt": "{time} {icon}",
+    "format-full": "  {capacity}%",      // Batarya tam doluyken gösterilecek ikon
+    "format-icons": ["  ", "  ", "  ", "  ", "  "]  // Batarya seviyesi ikonları (düşükten yükseğe)
+},
+
+  "group/user": {
+    "drawer": {
+      "children-class": "group-power",
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/user-menu",
+      "custom/reboot",
+      "custom/power",
+      "custom/lock"
+    ],
+    "orientation": "inherit"
+  },
+  "height": 16,
+  "hyprland/workspaces": {
+    "active-only": true,
+    "all-outputs": false,
+    "format": "<big>{icon}</big>",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8"
+    },
+    "on-click": "activate",
+    "on-scroll-down": "hyprctl dispatch workspace m-1",
+    "on-scroll-up": "hyprctl dispatch workspace m+1"
+  },
+  "layer": "top",
+  "modules-center": [],
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "tray",
+    "cpu",
+    "battery",
+    "pulseaudio#out",
+    "pulseaudio#in",
+    "custom/notification",
+    "clock",
+    "group/user",
+  ],
+
+  "position": "top",
+  "pulseaudio#out": {
+    "format": "<big>{icon}</big>",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ],
+      "headphone": ""
+    },
+    "format-muted": "<big>󰝟</big>",
+    "on-click": "pavucontrol",
+    "states": {
+      "loud": 80,
+      "low": 15,
+      "max": 100,
+      "medium": 30,
+      "sweet": 60,
+      "zero": 0
+    },
+    "tooltip-format": "{volume}"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 5
+  }
+}
