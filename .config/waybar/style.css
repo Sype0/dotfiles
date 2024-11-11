@@ -53,19 +53,19 @@ window#waybar {
 }
 
 #workspaces button.empty:not(.visible) {
-    color: #929292;
+    color: #000000;
 }
 
 #workspaces button:hover,
 #workspaces button.empty:hover
 {
     background-color: #ffffff;
-    color: #505050;
+    color: #ffffff;
 }
 #battery {
     border-radius: 5px;
     margin: 5px;
-    background-color: #191919;
+    background-color: #1b1b1b;
     color: #ffffff;
     padding: 0px 15px;
     font-size: 12px; /* Yazı boyutu */
@@ -145,7 +145,7 @@ window#waybar {
 }
 
 #tray {
-    background-color: rgba(28, 28, 28, 0.5);
+    background-color: rgba(28, 28, 28, 0.7);
     padding: 0px 15px;
 }
 
@@ -171,11 +171,11 @@ window#waybar {
 }
 
 #custom-lock {
-    background-color: #00da12;
+    background-color: #009912;
 }
 
 #custom-lock:hover {
-    background-color: #007e39;
+    background-color: #005539;
 }
 
 #custom-reboot {
