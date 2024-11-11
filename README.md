@@ -5,7 +5,8 @@ This repository contains my personal configuration files (dotfiles) for various 
 ## Directory Structure
 
 - `.config/` - Contains configuration files for applications and settings.
-
+- `screenshot/` - Contains screenshots of my setup.
+  
 ## Screenshot
 
 Here's a preview of the setup:
