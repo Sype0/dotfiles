@@ -5,7 +5,8 @@ This repository contains my personal configuration files (dotfiles) for various 
 ## Directory Structure
 
 - `.config/` - Contains configuration files for applications and settings.
-
+- `screenshot/` - Contains screenshots of my setup.
+  
 ## Screenshot
 
 Here's a preview of the setup:
@@ -15,11 +16,3 @@ Here's a preview of the setup:
 ## License
 
 This repository is licensed under the GPL-3.0 License. See the [LICENSE](LICENSE) file for details.
-
-## Usage
-
-To set up these dotfiles on your system:
-
-1. Clone the repository to your home directory:
-   ```bash
-   git clone https://github.com/yourusername/dotfiles.git ~/
